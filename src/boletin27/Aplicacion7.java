@@ -1,6 +1,8 @@
 
 package boletin27;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ylagorebollar
@@ -9,13 +11,6 @@ public class Aplicacion7 extends javax.swing.JFrame {
 
     public Aplicacion7() {
         initComponents();
-        
-        
-        Object [] filas = new Object[3];
-        filas[0] = tNome.getText();
-        filas[1] = tApelido.getText();
-        filas[2] = cCursos.get
-         
     }
 
     @SuppressWarnings("unchecked")
@@ -112,35 +107,16 @@ public class Aplicacion7 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAgregarActionPerformed
-       
+      DefaultTableModel datos=(DefaultTableModel) tTabla.getModel();
+      Object [] filas = new Object[3];
+        filas[0] = tNome.getText();
+        filas[1] = tApelido.getText();
+        filas[2] = cCursos.getSelectedItem().toString();
+      datos.addRow(filas);
+      tTabla.setModel(datos);
+        
         
     }//GEN-LAST:event_bAgregarActionPerformed
-
-    
-   
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Aplicacion7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Aplicacion7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Aplicacion7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Aplicacion7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAgregar;
